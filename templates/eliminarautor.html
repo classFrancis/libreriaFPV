@@ -1,0 +1,85 @@
+{% extends "navbarperfiles.html" %}
+{% load static %}
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>{% block title %}Eliminar Autor{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--Navbar heredado-->
+    <style>
+      .rounded-image {
+      border-radius: 50%;
+      display: block;
+      margin: auto;
+      width: 200px; /* Ajusta el tamaño según tus preferencias */
+      }
+
+      body {
+      background-color: rgb(151, 199, 238); 
+      }
+
+      .nav-tabs {
+      background-color: #0073ff; 
+      border: 1px solid rgb(0, 140, 255);
+      border-radius: 25px;
+      display: flex;
+      justify-content: center;
+      }
+
+      .custom-btn {
+      width: 50%; /* Aumenta el ancho en un 10% */
+      background-color: #0073ff;
+      justify-content: center;
+      }
+
+    </style>
+      <label class="d-flex align-items-center justify-content-center full-height " style="margin-top: 50px;">
+          <label class="card" style="width: 50rem;">
+              <div class="card-body">
+                  <p>Autor: {{ autor.nombreAutor }} {{ autor.apellidoAutor }}</p>
+                  <p>Biografia: {{ autor.biografiaAutor }}</p>
+                  <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#alertamodal">
+                      Eliminar Autor del sistema
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="alertamodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">AVISO MUY IMPORTANTE</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          </div>
+                          <div class="modal-body">
+                            <p>La eliminacion del autor conlleva la eliminacion de todos los libros del autor existentes en el sistema. 
+                              Esta accion no se puede revertir!</p>
+                            <form action="{% url 'eliminar_autor' autor.id %}" method="post">
+                              {% csrf_token %}
+                              <button type="submit" class="btn btn-outline-danger"> 
+                                  Eliminar autor del sistema
+                              </button>
+                            </form>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+              </div>
+          </label>
+      </label>
+    <div class="container-fluid text-center"><!-- Grid para un boton de volver atras -->
+        <div class="row">
+          <div class="col">
+            <a href="{% url 'perfiladmin' %}" class="btn btn-danger" style="margin-top: 50px;margin-bottom: 50px;">Volver atras</a>
+          </div>
+        </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

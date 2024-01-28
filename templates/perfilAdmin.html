@@ -1,0 +1,62 @@
+{% extends "navbarperfiles.html" %}
+{% load static %}
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <title>{% block title %}Perfil de Administrador{% endblock %}</title>
+</head>
+<body>
+    {% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <!--Navbar heredado-->
+      <style>
+        .rounded-image {
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+        width: 200px; /* Ajusta el tamaño según tus preferencias */
+        }
+
+        body {
+        background-color: rgb(151, 199, 238); 
+        }
+
+        .nav-tabs {
+        background-color: #0073ff; 
+        border: 1px solid rgb(0, 140, 255);
+        border-radius: 25px;
+        display: flex;
+        justify-content: center;
+        }
+
+        .custom-btn {
+        width: 50%; /* Aumenta el ancho en un 10% */
+        }
+
+      </style>
+      <div class="container-fluid text-center"><!--GRID-->
+        <div class="row">
+          <div class="col" style="margin-top: 150px;">
+            <div class="list-group">
+              <a href="{% url 'registrar_autor' %}" class="list-group-item list-group-item-action active">Agregar un Autor</a>
+              <a href="{% url 'lista_editar_autor' %}" class="list-group-item list-group-item-action active">Modificar Datos de Autor</a>
+              <a href="{% url 'lista_eliminar_autor' %}" class="list-group-item list-group-item-action active">Eliminar Autor</a>
+          </div>
+          </div>
+          <div class="col" style="margin-top: 150px;">
+            <div class="list-group">
+              <a href="{% url 'agregar_libro_al_sistema' %}" class="list-group-item list-group-item-action active">Agregar libro</a>
+              <a href="{% url 'catalogolibroseditar' %}" class="list-group-item list-group-item-action active">Modificar libro</a>
+              <a href="{% url 'catalogo_libros_eliminar' %}" class="list-group-item list-group-item-action active">Eliminar libro</a>
+            </div>
+            </div>
+          <div class="col" style="margin-top: 150px;">
+            <div class="list-group">
+              <a href="{% url 'listar_reportes' %}" class="list-group-item list-group-item-action active">Gestionar reportes</a>
+              <a href="{% url 'lista_usuarios' %}" class="list-group-item list-group-item-action active">Gestionar usuarios</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endblock content %}
+</body>
+</html>
