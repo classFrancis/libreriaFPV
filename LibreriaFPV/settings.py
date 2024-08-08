@@ -85,13 +85,24 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'libreria001',
+#         'USER':'root',
+#         'PASSWORD':'2412',
+#         'PORT': 3306
+
+#     }
+# }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libreria001',
-        'USER':'root',
-        'PASSWORD':'2412',
-        'PORT': 3306
+        'NAME': 'classFrancis$libreria001',
+        'USER':'classFrancis',
+        'PASSWORD':'08082023',
+        'HOST':'classFrancis.mysql.pythonanywhere-services.com'
 
     }
 }
