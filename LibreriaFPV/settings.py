@@ -84,26 +84,13 @@ MEDIA_URL = '/media/'
 import pymysql
 pymysql.install_as_MySQLdb()
 
-'''
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'railway',
-        'HOST':'monorail.proxy.rlwy.net',
-        'USER':'root',
-        'PASSWORD':'hEBgfAab52B4CcFhBbec4AFedAG1dgE4',
-        'PORT': 12524
-
-    }
-}
-'''
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'libreriaFPV',
+        'NAME': 'libreria001',
         'USER':'root',
-        'PASSWORD':'admin',
+        'PASSWORD':'2412',
         'PORT': 3306
 
     }
