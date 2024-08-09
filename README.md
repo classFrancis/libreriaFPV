@@ -17,6 +17,7 @@ Tecnologías Utilizadas:
 ---
 
 * Framework: Django
+* Framework de diseño: Bootstrap 
 * Base de Datos: MySQL
 * Plataforma de Deploy: PythonAnywhere (capa gratuita)
   
