@@ -27,9 +27,9 @@ LOGIN_URL = 'login'
 SECRET_KEY = 'django-insecure-x79lbcvm54puclik#@@+1atfo4pt*nfdh+p580)!&ci3i@pmo)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['classFrancis.pythonanywhere.com']
 
 
 # Application definition
@@ -85,23 +85,12 @@ import pymysql
 pymysql.install_as_MySQLdb()
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'libreria001',
-#         'USER':'root',
-#         'PASSWORD':'2412',
-#         'PORT': 3306
-
-#     }
-# }
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'classFrancis$libreria001',
         'USER':'classFrancis',
-        'PASSWORD':'08082023',
+        'PASSWORD':'08082023fF',
         'HOST':'classFrancis.mysql.pythonanywhere-services.com'
 
     }
